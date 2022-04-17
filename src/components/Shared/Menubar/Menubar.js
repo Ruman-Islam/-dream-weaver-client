@@ -10,7 +10,7 @@ const Menubar = () => {
     const navigate = useNavigate();
     return (
         <nav>
-            <div><h2 className='nav-title'>Dream Weaver</h2></div>
+            <div><h1 className='nav-title'>Dream Weaver</h1></div>
             <div className='navigation-items'>
                 <CustomLink to='/home'>Home</CustomLink>
                 <CustomLink to="/Packages">Packages</CustomLink>
