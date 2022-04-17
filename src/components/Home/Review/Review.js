@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from "react-icons/ai";
-
 import './Review.css';
 
 const Review = () => {
@@ -29,6 +28,7 @@ const Review = () => {
     return (
         <section
             className="review-content-wrapper">
+            <h3 className='review-section-title'>CLIENT'S REVIEWS</h3>
             <button className='slide-left' onClick={prevSlide}>
                 <AiOutlineDoubleLeft className='arrow' />
             </button>
@@ -36,7 +36,7 @@ const Review = () => {
                 className='slider-wrapper'>
                 {reviews.map((slide, index) => {
                     return (
-                        <>
+                        <div className={index === current ? 'slide active' : 'slide'} key={index}>
                             {index === current && (
                                 <div className='slider-content'>
                                     <div style={{ width: '20%' }}>
@@ -45,11 +45,11 @@ const Review = () => {
                                     <div style={{ width: '70%' }}>
                                         <p>{slide.text}</p>
                                         <p>{slide.rating}</p>
-                                        <h5>{slide.name}</h5>
+                                        <h5 className='reviewer-name'>{slide.name}</h5>
                                     </div>
                                 </div>
                             )}
-                        </>
+                        </div>
                     )
                 })}
             </div>

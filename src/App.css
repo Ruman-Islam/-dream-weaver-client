@@ -36,3 +36,12 @@ button {
   --primary-color: #1E69B8;
   --form-color: #FFA500;
 }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-wrap {
+  flex: 1;
+}

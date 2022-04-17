@@ -13,7 +13,7 @@ const Package = (props) => {
             </div>
             <div className='pricing-features'>
                 <ul>
-                    {features.map(element => <li>{element}</li>)}
+                    {features.map((element, index) => <li key={index}>{element}</li>)}
                 </ul>
                 <div className='pricing-action'>
                     <button onClick={() => navigate(`/checkout/${id}`)}>Book Now</button>

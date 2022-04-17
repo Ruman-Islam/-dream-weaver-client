@@ -78,7 +78,7 @@ const useFirebase = () => {
                 }).then(() => {
                     setUser(result.user);
                     setEmailLoading(false);
-                    navigate((-2), from, { replace: true });
+                    navigate((-3), from, { replace: true });
                 }).catch((error) => {
                     setError(error.message);
                     setEmailLoading(false);

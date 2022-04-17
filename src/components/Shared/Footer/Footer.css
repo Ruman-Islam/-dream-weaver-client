@@ -1,0 +1,35 @@
+.footer-wrapper {
+    width: 100%;
+    background: #1C1C1C;
+    color: #fff;
+    margin-top: 50px;
+    padding: 50px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-wrapper .footer-content {
+    display: grid;
+    grid-template-columns: 300px 350px;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    padding: 20px 0;
+}
+
+.footer-wrapper .footer-content .address-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-wrapper .footer-content .address-content h3 {
+    margin-bottom: 20px;
+}
+
+.footer-wrapper .footer-content .address-content small {
+    margin-bottom: 5px;
+}
+
+.footer-wrapper .footer-content img{
+    width: 200px;
+}

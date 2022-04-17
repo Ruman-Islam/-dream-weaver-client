@@ -13,7 +13,7 @@ const Packages = ({ isHome }) => {
 
     return (
         <div className='packages-container'>
-            <h1 className='packages-title'>This is Packages</h1>
+            <h1 className='packages-title'>Packages</h1>
             <div className='packages-wrapper'>
                 {
                     isHome ?
