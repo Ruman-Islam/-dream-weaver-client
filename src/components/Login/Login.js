@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import useFirebase from '../../Firebase/useFirebase';
 import Menubar from '../Shared/Menubar/Menubar';
 import { Link } from 'react-router-dom';
+import SocialLogin from './SocialLogin';
 import './Login.css';
 
 const Login = () => {
-    const { googleSignIn,
-        facebookSignIn,
+    const {
         handleSignWithInEmailAndPassword,
-        googleLoading,
-        fbLoading,
         emailLoading,
         error
     } = useFirebase();
@@ -85,8 +83,7 @@ const Login = () => {
                             New to Influencer Gears?
                         </Link>
                     </small>
-                    <small>or</small>
-                    <button
+                    {/* <button
                         onClick={(e) => googleSignIn(e)}
                         className='social-btn'>
                         <div
@@ -99,7 +96,6 @@ const Login = () => {
                             </small>
                         </div>
                     </button>
-                    <hr />
                     <button
                         onClick={(e) => facebookSignIn(e)}
                         className='social-btn'>
@@ -112,7 +108,8 @@ const Login = () => {
                                 {fbLoading ? 'Loading...' : 'Continue with Facebook'}
                             </small>
                         </div>
-                    </button>
+                    </button> */}
+                    <SocialLogin />
                 </form>
             </div>
         </div>
