@@ -1,19 +1,13 @@
-import { onAuthStateChanged } from 'firebase/auth';
 import React, { useState } from 'react';
 import { AiOutlineExclamationCircle } from "react-icons/ai";
-import auth from '../../firebase.init.js';
+import useFirebase from '../../Firebase/useFirebase.js';
 import './Shipment.css';
 
 const Shipment = () => {
-    const [user, setUser] = useState({})
+    const { user } = useFirebase();
     const [userName, setUserName] = useState({ value: "", error: "" });
     const [address, setAddress] = useState({ value: "", error: "" });
     const [phone, setPhone] = useState({ value: "", error: "" });
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            setUser(user)
-        }
-    });
 
     const handleUserName = e => {
         const userNameInput = e.target.value;

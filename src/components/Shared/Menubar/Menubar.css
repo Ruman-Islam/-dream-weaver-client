@@ -1,8 +1,10 @@
 nav {
     width: 100%;
+    height: 80px;
     display: flex;
     justify-content: space-between;
-    padding: 10px 40px;
+    align-items: center;
+    padding: 0 40px;
     z-index: 99;
     position: relative;
     background-color: white;
@@ -10,7 +12,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 10px;
     padding: 5px;
 }
 
@@ -20,4 +22,14 @@ nav a {
 
 nav .navigation-items {
     display: flex;
+    align-items: center;
+}
+
+.navigation-items button {
+    border: 0;
+    margin-left: 10px;
+    background-color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
 }
