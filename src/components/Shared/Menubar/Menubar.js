@@ -9,7 +9,6 @@ const Menubar = () => {
             <div className='navigation-items'>
                 <CustomLink to='/home'>Home</CustomLink>
                 <CustomLink to="/Packages">Packages</CustomLink>
-                <CustomLink to="/checkout">Checkout</CustomLink>
                 <CustomLink to="/about">About</CustomLink>
             </div>
         </nav>

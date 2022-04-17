@@ -10,6 +10,7 @@ const Packages = ({ isHome }) => {
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])
+
     return (
         <div className='packages-container'>
             <h1 className='packages-title'>This is Packages</h1>

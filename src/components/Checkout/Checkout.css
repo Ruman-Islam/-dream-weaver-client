@@ -1,0 +1,7 @@
+.checkout-container {
+    max-width: 1110px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
