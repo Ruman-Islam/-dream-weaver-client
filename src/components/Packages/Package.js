@@ -2,8 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Package.css';
 
-const Package = (props) => {
-    const { id, name, price, features, imageURL } = props.package;
+const Package = ({ checkoutPage, package: { id, name, price, features, imageURL } }) => {
     const navigate = useNavigate();
     return (
         <div className='pricing-box'>
@@ -18,9 +17,12 @@ const Package = (props) => {
                 <ul>
                     {features.map((element, index) => <li key={index}>{element}</li>)}
                 </ul>
-                <div className='pricing-action'>
-                    <button onClick={() => navigate(`/checkout/${id}`)}>Book Now</button>
-                </div>
+                {checkoutPage ?
+                    null
+                    : <div className='pricing-action'>
+                        <button onClick={() => navigate(`/checkout/${id}`)}>Book Now</button>
+                    </div>
+                }
             </div>
         </div>
     );

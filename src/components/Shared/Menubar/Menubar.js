@@ -9,12 +9,13 @@ const Menubar = () => {
     const { user, handleSignOut } = useFirebase();
     const navigate = useNavigate();
     return (
-        <nav>
+        <nav className='container'>
             <div><h1 className='nav-title'>Dream Weaver</h1></div>
             <div className='navigation-items'>
                 <CustomLink to='/home'>Home</CustomLink>
                 <CustomLink to="/Packages">Packages</CustomLink>
-                <CustomLink to="/about">About</CustomLink>
+                <CustomLink to="/about">About me</CustomLink>
+                <CustomLink to="/blog">Blog</CustomLink>
                 {/* <div>
                     <img style={{ width: '30px', height: '30px', borderRadius: '50%' }} src={user?.photoURL ? user?.photoURL : defaultImg} alt="" />
                 </div> */}

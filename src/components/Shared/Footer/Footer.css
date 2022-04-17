@@ -33,3 +33,12 @@
 .footer-wrapper .footer-content img{
     width: 200px;
 }
+
+
+
+@media screen and (max-width: 576px) {
+    .footer-wrapper .footer-content {
+        grid-template-columns: 300px;
+    }
+    
+}

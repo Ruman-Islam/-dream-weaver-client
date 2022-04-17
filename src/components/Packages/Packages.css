@@ -3,8 +3,6 @@
 }
 
 .packages-wrapper {
-    width: 950px;
-    margin: 0 auto;
     display: grid;
     gap: 30px 0;
     grid-template-columns: repeat(4, 1fr);
