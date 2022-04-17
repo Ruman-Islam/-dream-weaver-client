@@ -3,13 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import './Package.css';
 
 const Package = (props) => {
-    const { id, name, price, features } = props.package;
+    const { id, name, price, features, imageURL } = props.package;
     const navigate = useNavigate();
     return (
         <div className='pricing-box'>
             <div className='package-header'>
-                <small>{name}</small>
-                <h3>TK. {price}/=</h3>
+                <img src={imageURL} alt="" />
+                <div className='price-content'>
+                    <small>{name}</small>
+                    <h3>TK. {price}/=</h3>
+                </div>
             </div>
             <div className='pricing-features'>
                 <ul>

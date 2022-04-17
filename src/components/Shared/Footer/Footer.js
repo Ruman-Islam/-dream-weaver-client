@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoLocationOutline, AiOutlineMail, BsFillTelephoneFill, AiOutlineExclamationCircle } from "react-icons/ai";
+import { AiFillPhone, AiFillMail, AiFillEnvironment } from "react-icons/ai";
 import './Footer.css';
 
 const Footer = () => {
@@ -12,9 +12,9 @@ const Footer = () => {
                 </div>
                 <div className='address-content'>
                     <h3>Dhaka Office</h3>
-                    <small> <AiOutlineExclamationCircle className='warning-icon' /> House#23,Road#1,Sector#9,Uttara. Dhaka, Bangladesh 1230</small>
-                    <small> <AiOutlineExclamationCircle className='warning-icon' /> dreamweaverphotography.bd@gmail.com</small>
-                    <small> <AiOutlineExclamationCircle className='warning-icon' /> +88 01670 078953</small>
+                    <small> <AiFillEnvironment /> House#23,Road#1,Sector#9,Uttara. Dhaka, Bangladesh 1230</small>
+                    <small> <AiFillMail /> dreamweaverphotography.bd@gmail.com</small>
+                    <small> <AiFillPhone /> +88 01670 078953</small>
                 </div>
             </div>
             <small>Copyright © {year}. All right reserved dreamweaver.com.bd</small>
