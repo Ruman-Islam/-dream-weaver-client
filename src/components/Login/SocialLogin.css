@@ -1,18 +1,21 @@
 .social-button .or-line {
     display: flex;
     align-items: center;
+    margin-top: 5px;
 }
 
 .social-button .or-line  > div {
-    width: 100%;
+    width: 40%;
+    margin: auto;
+    height: 1px;
     background-color: var(--primary-color);
 }
 
 .social-button .or-line  > small {
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
-.social-button button {
+.social-button > button {
     width: 80%;
     margin: 10px auto;
     background-color: transparent;

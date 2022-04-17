@@ -21,7 +21,7 @@ const useFirebase = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(null);
     const [googleLoading, setGoogleLoading] = useState(false);
     const [fbLoading, setFbLoading] = useState(false);
     const [emailLoading, setEmailLoading] = useState(false);
@@ -88,7 +88,6 @@ const useFirebase = () => {
                 setError(error.message);
                 setEmailLoading(false);
             });
-
     }
 
     useEffect(() => {
@@ -104,7 +103,8 @@ const useFirebase = () => {
 
     const handleSignOut = () => {
         signOut(auth).then(() => {
-            setUser({});
+            setUser(null);
+            navigate('/')
         }).catch((error) => {
             setError(error.message);
         });

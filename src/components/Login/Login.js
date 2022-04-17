@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import useFirebase from '../../Firebase/useFirebase';
 import Menubar from '../Shared/Menubar/Menubar';
@@ -41,8 +39,12 @@ const Login = () => {
         if (email.value && password.value) {
             handleSignWithInEmailAndPassword(email.value, password.value);
         } else {
-            setEmail({ value: '', error: 'Email Required' })
-            setPassword({ value: '', error: 'Password Required' })
+            if (email.value === '') {
+                setEmail({ value: '', error: 'Email Required' })
+            }
+            if (password.value === '') {
+                setPassword({ value: '', error: 'Password Required' })
+            }
         }
     }
 
@@ -80,35 +82,9 @@ const Login = () => {
                         </small>}
                     <small>
                         <Link to='/signup'>
-                            New to Influencer Gears?
+                            New to Dream Weaver?
                         </Link>
                     </small>
-                    {/* <button
-                        onClick={(e) => googleSignIn(e)}
-                        className='social-btn'>
-                        <div
-                            className='social-icon-wrapper'>
-                            <FontAwesomeIcon className="icon" icon={faGoogle} />
-                        </div>
-                        <div className='social-btn-text-wrapper'>
-                            <small>
-                                {googleLoading ? 'Loading...' : 'Continue with Google'}
-                            </small>
-                        </div>
-                    </button>
-                    <button
-                        onClick={(e) => facebookSignIn(e)}
-                        className='social-btn'>
-                        <div
-                            className='social-icon-wrapper'>
-                            <FontAwesomeIcon className="icon" icon={faFacebook} />
-                        </div>
-                        <div className='social-btn-text-wrapper'>
-                            <small>
-                                {fbLoading ? 'Loading...' : 'Continue with Facebook'}
-                            </small>
-                        </div>
-                    </button> */}
                     <SocialLogin />
                 </form>
             </div>

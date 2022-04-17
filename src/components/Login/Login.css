@@ -5,10 +5,9 @@
     justify-content: center;
 }
 .form-container form{
-    width: 320px;
+    width: 280px;
     display: flex;
     flex-direction: column;
-    max-width: 350px;
     background-color: white;
     padding: 30px 20px;
     border-radius: 5px;
@@ -50,7 +49,18 @@
 .form-container form small {
     font-size: 12px;
     text-align: center;
-    margin-bottom: 5px;
+}
+
+.form-container form .error {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: red;
+    margin: 5px 0;
+}
+
+.form-container form .warning-icon {
+    margin-right: 5px;
 }
 
 .form-container form .social-btn {

@@ -1,7 +1,7 @@
 import React from 'react';
 import useFirebase from '../../Firebase/useFirebase';
-import googleLogo from '../../assets/images/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png';
-import githubLogo from '../../assets/images/101-1017465_github-github-icon-png-grey.png';
+import googleLogo from '../../assets/images/google-logo.png';
+import facebookLogo from '../../assets/images/facebook-logo.png';
 import './SocialLogin.css';
 
 const SocialLogin = () => {
@@ -30,7 +30,7 @@ const SocialLogin = () => {
             </button>
             <button
                 onClick={(e) => facebookSignIn(e)}>
-                <img src={githubLogo} alt="" />
+                <img src={facebookLogo} alt="" />
                 <div className='social-btn-text-wrapper'>
                     <small>
                         {fbLoading ? 'Loading...' : 'Continue with Facebook'}

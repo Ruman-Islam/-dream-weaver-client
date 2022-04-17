@@ -1,20 +1,10 @@
-
 /* .form-container {
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80vh;
-    flex-direction: column;
-} */
-
-.form-container form h5 {
-    text-align: center;
-    color: var(--form-color);
-    font-weight: 700;
-    font-size: 25px;
 }
-
-.form-container form {
+.form-container form{
     width: 320px;
     display: flex;
     flex-direction: column;
@@ -25,9 +15,16 @@
     box-shadow: 0 0 2px lightslategray;
 }
 
+.form-container form h5 {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 25px;
+}
+
 .form-container input {
     border: 0;
-    outline: 1px solid var(--form-color);
+    outline: 1px solid var(--primary-color);
     padding: 5px 10px;
     border-radius: 3px;
     font-size: 12px;
@@ -41,8 +38,8 @@
 
 .form-container form .login-btn {
     border: 0;
-    outline: 1px solid var(--form-color);
-    background-color: var(--form-color);
+    outline: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
     color: white;
     font-weight: 500;
     padding: 4px;
@@ -50,15 +47,10 @@
     margin-bottom: 10px;
 }
 
-.form-container form .login-btn:hover {
-    background-color: rgb(243, 158, 0);
-    transition: .5s all;
-}
-
 .form-container form small {
     font-size: 12px;
-    margin-bottom: 5px;
     text-align: center;
+    margin-bottom: 5px;
 }
 
 .form-container form .error {
@@ -67,28 +59,18 @@
     color: red;
 }
 
-.form-container form .or-line {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.form-container form .or-line div {
-    width: 120px;
-    outline: 1px solid lightslategray;
-}
-
 .form-container form .social-btn {
     border: 0;
-    font-weight: 500;
+    outline: 1px solid var(--primary-color);
     padding: 5px;
     border-radius: 2px;
     font-size: 13px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    background-color: transparent;
+    margin-bottom: 10px;
 }
-
 
 .form-container form .social-btn .social-icon-wrapper {
     width: 1%;
@@ -102,5 +84,4 @@
 .form-container form .social-btn .social-btn-text-wrapper small {
     margin-top: 4px;
     font-size: 16px;
-    font-weight: 700;
-}
+} */
