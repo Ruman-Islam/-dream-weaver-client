@@ -1,8 +1,6 @@
 .about-container {
     background: #10121B;
     height: 100vh;
-    display: flex;
-    align-items: center;
 }
 .about-container .about-wrapper {
     width: 100%;
@@ -16,8 +14,6 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     color: #f2f2f2;
 }
 
@@ -53,4 +49,32 @@
     border: 1px solid slategray;
     padding: 2px;
     border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .about-container {
+        height: 100%;
+    }
+
+    .about-container .about-wrapper {
+        flex-direction: column;
+        padding-top: 3rem;
+    }
+
+    .about-wrapper .about-description {
+        width: 100%;
+        order: 2;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .about-wrapper .about-description h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .about-wrapper .about-description span {
+        text-align: center;
+    }
 }

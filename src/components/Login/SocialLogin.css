@@ -1,7 +1,7 @@
 .social-button .or-line {
     display: flex;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .social-button .or-line  > div {
@@ -16,7 +16,7 @@
 }
 
 .social-button > button {
-    width: 80%;
+    width: 100%;
     margin: 10px auto;
     background-color: transparent;
     display: flex;
@@ -24,7 +24,9 @@
     align-items: center;
     border: 0;
     outline: 1px solid gray;
+    border-radius: 5px;
     padding: 5px 0;
+    font-size: 18px;
 }
 
 .social-button button img {

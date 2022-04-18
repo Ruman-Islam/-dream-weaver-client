@@ -25,19 +25,10 @@ body {
   padding: 0 20px;
 }
 
-.page-container {
-  display: flex;
-  flex-direction: column;
-  /* min-height: 100vh; */
-  min-height: 500px;
-}
-.content-wrap {
-  flex: 1;
-}
-
 button {
   cursor: pointer;
 }
+
 :root {
   --primary-color: #1E69B8;
   --form-color: #FFA500;

@@ -3,7 +3,7 @@ const packages = [
         "id": 1,
         "name": "SUPER SAVER 1",
         "price": 12500,
-        "imageURL": "https://www.shaadidukaan.com/vogue/wp-content/uploads/2020/04/ajphotography-feature.jpeg",
+        "imageURL": "https://i.ibb.co/HDg9Z3T/IMG-9177.jpg",
         "features": [
             "1 Top Photographer.",
             "Event Duration: 4 Hours",
@@ -17,7 +17,7 @@ const packages = [
         "id": 2,
         "name": "SUPER SAVER 2",
         "price": 15000,
-        "imageURL": "https://cdn0.weddingwire.in/articles/images/9/0/8/6/img_16809/t30_creative-wedding-photography-avinash-dhoundhiyal-photography-lead-image.jpg",
+        "imageURL": "https://i.ibb.co/Hnwg4Qt/Whats-App-Image-2022-04-18-at-16-54-53.jpg",
         "features": [
             "1 Top Photographer + 1 Top Associate Photographer.",
             "Event Duration: 4 Hours",
@@ -31,7 +31,7 @@ const packages = [
         "id": 3,
         "name": "SUPER SAVER 3",
         "price": 20000,
-        "imageURL": "https://cdn-afnbc.nitrocdn.com/BZKOTrjyBhfNoALQFbXvCUNxHQlQOTEp/assets/static/optimized/rev-c3371cb/adphotography/wp-content/uploads/2021/04/rita_banner.webp",
+        "imageURL": "https://i.ibb.co/bHm89XX/Whats-App-Image-2022-04-18-at-17-05-06.jpg",
         "features": [
             "1 Senior Photographer + 1 Top Associate Photographer.",
             "Event Duration: 4 Hours",
@@ -46,7 +46,7 @@ const packages = [
         "id": 4,
         "name": "SUPER SAVER 4",
         "price": 30000,
-        "imageURL": "https://cdn0.weddingwire.in/vendor/3835/3_2/960/jpeg/7e2edb5b-27d4-4e18-8391-afd8e830916c_15_303835-162842276625291.jpeg",
+        "imageURL": "https://i.ibb.co/J5sfbrg/Whats-App-Image-2022-04-18-at-16-50-31.jpg",
         "features": [
             "1 Senior Photographer + 1 Top Photographer + 1 Top Associate Photographer",
             "Event Duration: 5 Hours",
@@ -62,7 +62,7 @@ const packages = [
         "id": 5,
         "name": "ELEGANT 1",
         "price": 40000,
-        "imageURL": "https://photos.smugmug.com/Bangladeshi-Wedding-Photos/i-pdZJnCR/2/02af0d74/M/23000154_1922484737779298_6605500656161945366_o-M.jpg",
+        "imageURL": "https://i.ibb.co/NrMRpKv/Whats-App-Image-2022-04-18-at-16-50-32.jpg",
         "features": [
             "Core Photographer Rifat Shakhawat Hossain / Ishrat Amin + 1 Top Photographer + 1 Top Associate photographer.",
             "DW  Team  Shooting  Duration : 5 Hours",
@@ -79,7 +79,7 @@ const packages = [
         "id": 6,
         "name": "ELEGANT 2",
         "price": 50000,
-        "imageURL": "https://photos.smugmug.com/Bangladeshi-Wedding-Photos/i-cjhhF88/2/764d079e/M/_JOY7852-Exposure-M.jpg",
+        "imageURL": "https://i.ibb.co/TTJL6hc/Whats-App-Image-2022-04-18-at-16-50-31.jpg",
         "features": [
             "Core Photographer Rifat Shakhawat Hossain / Ishrat Amin + 1 Top Photographer + 1 Top Associate photographer.",
             "3 Hour  Exclusive session from Core Photographer",
@@ -97,7 +97,7 @@ const packages = [
         "id": 7,
         "name": "ELEGANT 3",
         "price": 70000,
-        "imageURL": "https://i.pinimg.com/originals/83/dd/c6/83ddc6bb9bf59528b8542651dd27d469.jpg",
+        "imageURL": "https://i.ibb.co/fG5fX4h/Whats-App-Image-2022-04-18-at-16-54-54.jpg",
         "features": [
             "Core Photographer Rifat Shakhawat Hossain / Ishrat Amin + 2 Top Photographer + 1 Top Associate photographer.",
             "5 Hour  Exclusive session from Core Photographer",
@@ -115,7 +115,7 @@ const packages = [
         "id": 8,
         "name": "ELEGANT 4",
         "price": 100000,
-        "imageURL": "https://www.shaadibaraati.com/vendors-profile/c2e3800a580175d320b40ca1cd9cf8db.jpg",
+        "imageURL": "https://i.ibb.co/M6tNpt7/IMG-9188.jpg",
         "features": [
             "Core Photographer Rifat Shakhawat Hossain / Ishrat Amin + 2 Top Photographer + 1 Top Associate photographer.",
             "Unlimited  Exclusive session from Core Photographer",
