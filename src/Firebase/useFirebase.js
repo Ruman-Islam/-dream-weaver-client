@@ -7,7 +7,8 @@ import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
     updateProfile,
-    sendEmailVerification
+    sendEmailVerification,
+    sendPasswordResetEmail
 } from "firebase/auth";
 import { useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom";
@@ -27,6 +28,7 @@ const useFirebase = () => {
     const [fbLoading, setFbLoading] = useState(false);
     const [emailLoading, setEmailLoading] = useState(false);
     const [error, setError] = useState(undefined);
+    const [resetEmail, setResetEmail] = useState(false);
 
     const googleSignIn = e => {
         setGoogleLoading(true);
@@ -116,17 +118,31 @@ const useFirebase = () => {
         });
     }
 
+    const handlePasswordReset = email => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                // Password reset email sent!
+                setResetEmail(true);
+            })
+            .catch((error) => {
+                setError(error.message);
+                setResetEmail(false);
+            });
+    }
+
     return {
         googleSignIn,
         facebookSignIn,
         handleSignWithInEmailAndPassword,
         handleCreateAccountWithEmailAndPassword,
         handleSignOut,
+        handlePasswordReset,
         googleLoading,
         fbLoading,
         emailLoading,
         user,
-        error
+        error,
+        resetEmail
     }
 }
 

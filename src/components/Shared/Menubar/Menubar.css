@@ -17,6 +17,7 @@ nav .navbar-wrapper {
     justify-content: space-between;
     align-items: center;
     padding: 20px 100px;
+    font-size: 1rem;
 }
 
 .navbar-background {
