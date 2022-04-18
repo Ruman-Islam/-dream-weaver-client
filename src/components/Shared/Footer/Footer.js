@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className='footer-wrapper'>
             <div className='footer-content'>
                 <div>
-                    <img src="//i0.wp.com/dreamweaver.com.bd/wp-content/uploads/2017/11/logo-white.png" alt="" />
+                    <h2>Photometry</h2>
                 </div>
                 <div className='address-content'>
                     <h3>Dhaka Office</h3>
