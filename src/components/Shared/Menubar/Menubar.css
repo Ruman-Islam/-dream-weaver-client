@@ -13,7 +13,7 @@ nav {
     right: 0;
     z-index: 55;
     font-size: 1.2rem;
-    transition: all;
+    transition: .5s all;
     color: #fff;
     background-color: transparent;
 }
