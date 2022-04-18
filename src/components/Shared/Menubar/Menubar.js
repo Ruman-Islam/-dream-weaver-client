@@ -19,7 +19,7 @@ const Menubar = () => {
                 <div className='navigation-items'>
                     <small className='username'>
                         <strong>
-                            {user?.displayName ? `Hi, ${user?.displayName.split(' ')[0]}!` : ''}
+                            {user?.displayName ? `Hi ${user?.displayName.split(' ')[0]},` : ''}
                         </strong>
                     </small>
                     <CustomLink className={navbar && 'nav-link'} to='/home'>Home</CustomLink>
