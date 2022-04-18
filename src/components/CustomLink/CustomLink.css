@@ -1,0 +1,8 @@
+.custom-link {
+    color: blue !important;
+    z-index: 99999;
+}
+
+.black {
+    color: black !important;
+}

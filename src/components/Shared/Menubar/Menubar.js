@@ -3,13 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import useFirebase from '../../../Firebase/useFirebase';
 import CustomLink from '../../CustomLink/CustomLink';
 import defaultImg from '../../../assets/images/photoplaceholder.jpg';
+import useNav from '../../../Hooks/useNav';
 import './Menubar.css';
 
 const Menubar = () => {
+    const { navbar } = useNav();
     const { user, handleSignOut } = useFirebase();
     const navigate = useNavigate();
     return (
-        <nav className='container'>
+        <nav className={`${navbar && 'navbar-background'}`}>
             <div><h1 className='nav-title'>Dream Weaver</h1></div>
             <div className='navigation-items'>
                 <small className='username'>
@@ -17,10 +19,10 @@ const Menubar = () => {
                         {user?.displayName ? `Hi, ${user?.displayName.split(' ')[0]}!` : ''}
                     </strong>
                 </small>
-                <CustomLink to='/home'>Home</CustomLink>
-                <CustomLink to="/Packages">Packages</CustomLink>
-                <CustomLink to="/about">About me</CustomLink>
-                <CustomLink to="/blog">Blog</CustomLink>
+                <CustomLink className={navbar && 'nav-link'} to='/home'>Home</CustomLink>
+                <CustomLink className={navbar && 'nav-link'} to="/Packages">Packages</CustomLink>
+                <CustomLink className={navbar && 'nav-link'} to="/about">About me</CustomLink>
+                <CustomLink className={navbar && 'nav-link'} to="/blog">Blog</CustomLink>
 
                 {user?.email ?
                     <div>

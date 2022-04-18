@@ -12,7 +12,9 @@ const Checkout = () => {
 
     return (
         <div>
-            <Menubar />
+            <div className='blog-banner-wrapper'>
+                <Menubar />
+            </div>
             <div className='checkout-container'>
                 <Package package={selectedPackage} checkoutPage />
                 <div className='shipment-container'>

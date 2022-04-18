@@ -50,7 +50,9 @@ const Login = () => {
 
     return (
         <div>
-            <Menubar />
+            <div className='blog-banner-wrapper'>
+                <Menubar />
+            </div>
             <div className='form-container'>
                 <form onSubmit={handleLogin}>
                     <h5>Log In</h5>

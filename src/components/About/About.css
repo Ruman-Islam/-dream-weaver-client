@@ -1,6 +1,8 @@
 .about-container {
     background: #10121B;
     height: 100vh;
+    display: flex;
+    align-items: center;
 }
 .about-container .about-wrapper {
     width: 100%;
@@ -26,14 +28,14 @@
 }
 
 .about-wrapper .about-description span {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5;
     font-weight: 600;
 }
 
 .about-wrapper .about-description p {
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 18px;
     color: #919dae;
 }
 
@@ -42,6 +44,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 20px !important;
 }
 
 .about-wrapper .about-photo img {
@@ -49,4 +52,5 @@
     height: 350px;
     border: 1px solid slategray;
     padding: 2px;
+    border-radius: 10px;
 }

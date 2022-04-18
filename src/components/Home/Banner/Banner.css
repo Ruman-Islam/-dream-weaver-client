@@ -38,9 +38,11 @@
 }
 
 .banner-title {
+    font-size: 40px;
     font-family: 'Roboto', sans-serif;
 }
 
 .banner-text {
     color: rgb(201, 223, 245);
+    font-size: 18px;
 }

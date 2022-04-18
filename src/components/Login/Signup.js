@@ -71,7 +71,9 @@ const Signup = () => {
 
     return (
         <div>
-            <Menubar />
+            <div className='blog-banner-wrapper'>
+                <Menubar />
+            </div>
             <div className='form-container'>
                 <form onSubmit={handleRegister}>
                     <h5>Sign Up</h5>

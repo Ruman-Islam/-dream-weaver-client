@@ -4,6 +4,8 @@
     font-size: 14px;
     display: flex;
     flex-direction: column;
+    background: #fff;
+    margin-bottom: 50px;
 }
 
 .package-header {

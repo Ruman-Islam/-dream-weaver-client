@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import './CustomLink.css';
 
 const CustomLink = ({ children, to, ...props }) => {
     let resolved = useResolvedPath(to);
@@ -7,7 +8,7 @@ const CustomLink = ({ children, to, ...props }) => {
     return (
         <div>
             <Link
-                style={{ color: match ? "blue" : "black" }}
+                className={match ? "custom-link" : "black"}
                 to={to}
                 {...props}
             >

@@ -1,0 +1,12 @@
+.allPackages-container {
+    background: url('https://i0.wp.com/dreamweaver.com.bd/wp-content/themes/dreamweaver/images/page-bg.jpg');
+    height: 100%;
+}
+
+.allPackages-container .allPackages-banner-wrapper{
+    background: url('//i0.wp.com/dreamweaver.com.bd/wp-content/uploads/2021/11/NFS03651-1-scaled.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+}

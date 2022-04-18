@@ -1,5 +1,5 @@
 .form-container {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +30,7 @@
 }
 
 .form-container form label {
-    margin: 20px 0 0;
+    margin: 10px 0 5px;
     color: lightslategray;
     font-size: 12px;
 }

@@ -4,9 +4,11 @@ import './Blog.css';
 
 const Blog = () => {
     return (
-        <div>
-            <Menubar />
-            <div className='container'>
+        <div className='blog-container'>
+            <div className='blog-banner-wrapper'>
+                <Menubar />
+            </div>
+            <div className='container answer-container'>
                 <h2>1. Difference between Authentication & Authorization</h2>
                 <p><strong>Authentication:</strong> Authentication defines that the identification of identity. It means  ensuring the system, who you are to the system.</p>
                 <p><strong>Authorization:</strong> Authorization defines that the power or the responsibility according to your identification. It also defines what can you do according to your identification in the system.</p>
