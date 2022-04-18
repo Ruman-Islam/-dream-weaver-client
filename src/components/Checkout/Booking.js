@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import useFirebase from '../../Firebase/useFirebase.js';
-import './Shipment.css';
+import './Booking.css';
 
 const Shipment = ({ setBooked }) => {
     // logged in user info //

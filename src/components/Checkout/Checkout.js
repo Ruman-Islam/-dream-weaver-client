@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { getPackage } from '../../packages';
 import Menubar from '../Shared/Menubar/Menubar';
-import Shipment from './Shipment';
+import Booking from './Booking';
 import Package from '../Packages/Package';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -35,7 +35,7 @@ const Checkout = () => {
             <div className='checkout-container'>
                 <Package package={selectedPackage} checkoutPage />
                 <div className='shipment-container'>
-                    <Shipment setBooked={setBooked} />
+                    <Booking setBooked={setBooked} />
                 </div>
             </div>
             <ToastContainer />
