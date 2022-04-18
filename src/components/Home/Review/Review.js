@@ -43,10 +43,10 @@ const Review = () => {
                         <div className={index === current ? 'slide active' : 'slide'} key={index}>
                             {index === current && (
                                 <div className='slider-content'>
-                                    <div style={{ width: '20%' }}>
+                                    <div className='slider-image-wrapper'>
                                         <img src={slide.img} alt="" />
                                     </div>
-                                    <div style={{ width: '70%' }}>
+                                    <div className='slider-text-wrapper'>
                                         <p>{slide.text}</p>
                                         <Rating
                                             initialRating={slide.rating}
