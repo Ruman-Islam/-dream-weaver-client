@@ -1,19 +1,41 @@
 .checkout-container {
-    max-width: 1110px;
-    height: 80vh;
-    margin: 50px auto;
+    max-width: 40%;
+    margin: 0 auto;
+    height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
+}
+
+.checkout-container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -5;
+   
 }
 
 
 /* .............Mobile device .............. */
 /* .......................................... */
+@media only screen and (max-width: 1280px) {
+    .checkout-container {
+        flex-direction: column;
+        height: 100%;
+        padding: 20px 0;
+    }
+}
 @media only screen and (max-width: 576px) {
     .checkout-container {
         flex-direction: column;
         height: 100%;
+        padding: 20px 0;
     }
 }
 /* .............Mobile device .............. */

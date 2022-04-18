@@ -14,8 +14,7 @@ const About = () => {
                     <div className='about-description'>
                         <h1>Ruman Islam</h1>
                         <span>Goal</span>
-                        <p>A self-motivated, ambitious and enthusiastic web designer and developer with highly interested in JavaScript, HTML5, CSS3, and front-end web development with modern web tech like React.js. To work in Software industry with modern web technologies of different local and multinational Software/IT agency of Bangladesh and grow rapidly with increasing skills and responsibilities.</p>
-                        <p>My goal is to become a MERN Stack Web Developer. I'm passionate to make a clean, beautiful, professional, responsive Web site and maximum optimized way so that it performs well.</p>
+                        <p>My goal is to become a skilled web developer. After completing programming hero web development course successfully, I shall apply for the designation 'web developer' in software companies. After getting job I'll try my best to serve the company by the skills i have gained from this course. I have higher desire to get job in renowned software firm. Insha Allah one day I'll reach my desired goal of life.</p>
                     </div>
                     <div className='about-photo'>
                         <img src={profileImage} alt="" />

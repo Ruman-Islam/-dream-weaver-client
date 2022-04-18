@@ -14,7 +14,7 @@ const Menubar = () => {
         <nav className={`${navbar && 'navbar-background'}`}>
             <div className='navbar-wrapper'>
                 <div>
-                    <h1 className='nav-title'>Dream Weaver</h1>
+                    <h1 className='nav-title'>Photometry</h1>
                 </div>
                 <div className='navigation-items'>
                     <small className='username'>
