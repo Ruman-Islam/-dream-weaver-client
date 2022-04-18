@@ -12,30 +12,34 @@ const Menubar = () => {
     const navigate = useNavigate();
     return (
         <nav className={`${navbar && 'navbar-background'}`}>
-            <div><h1 className='nav-title'>Dream Weaver</h1></div>
-            <div className='navigation-items'>
-                <small className='username'>
-                    <strong>
-                        {user?.displayName ? `Hi, ${user?.displayName.split(' ')[0]}!` : ''}
-                    </strong>
-                </small>
-                <CustomLink className={navbar && 'nav-link'} to='/home'>Home</CustomLink>
-                <CustomLink className={navbar && 'nav-link'} to="/Packages">Packages</CustomLink>
-                <CustomLink className={navbar && 'nav-link'} to="/about">About me</CustomLink>
-                <CustomLink className={navbar && 'nav-link'} to="/blog">Blog</CustomLink>
+            <div className='navbar-wrapper'>
+                <div>
+                    <h1 className='nav-title'>Dream Weaver</h1>
+                </div>
+                <div className='navigation-items'>
+                    <small className='username'>
+                        <strong>
+                            {user?.displayName ? `Hi, ${user?.displayName.split(' ')[0]}!` : ''}
+                        </strong>
+                    </small>
+                    <CustomLink className={navbar && 'nav-link'} to='/home'>Home</CustomLink>
+                    <CustomLink className={navbar && 'nav-link'} to="/Packages">Packages</CustomLink>
+                    <CustomLink className={navbar && 'nav-link'} to="/about">About me</CustomLink>
+                    <CustomLink className={navbar && 'nav-link'} to="/blog">Blog</CustomLink>
 
-                {user?.email ?
-                    <div>
-                        <button onClick={handleSignOut}>
-                            Log out
-                        </button>
+                    {user?.email ?
+                        <div>
+                            <button onClick={handleSignOut}>
+                                Log out
+                            </button>
+                        </div>
+                        :
+                        <button onClick={() => navigate('/login')}>
+                            Log In
+                        </button>}
+                    <div className='user-profile-photo'>
+                        <img src={user?.photoURL ? user?.photoURL : defaultImg} alt="" />
                     </div>
-                    :
-                    <button onClick={() => navigate('/login')}>
-                        Log In
-                    </button>}
-                <div className='user-profile-photo'>
-                    <img src={user?.photoURL ? user?.photoURL : defaultImg} alt="" />
                 </div>
             </div>
         </nav>

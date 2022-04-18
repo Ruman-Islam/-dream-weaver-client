@@ -6,7 +6,8 @@ import {
     onAuthStateChanged,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
-    updateProfile
+    updateProfile,
+    sendEmailVerification
 } from "firebase/auth";
 import { useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom";
@@ -75,10 +76,15 @@ const useFirebase = () => {
             .then(async (result) => {
                 await updateProfile(auth.currentUser, {
                     displayName: name
-                }).then(() => {
-                    setUser(result.user);
-                    setEmailLoading(false);
-                    navigate((-3), from, { replace: true });
+                }).then(async () => {
+                    await sendEmailVerification(auth.currentUser)
+                        .then(() => {
+                            // Email verification sent!
+                            // ...
+                            setUser(result.user);
+                            setEmailLoading(false);
+                            navigate((-3), from, { replace: true });
+                        });
                 }).catch((error) => {
                     setError(error.message);
                     setEmailLoading(false);
