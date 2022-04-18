@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from "react-icons/ai";
+import Rating from 'react-rating';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import './Review.css';
 
 const Review = () => {
@@ -44,8 +48,13 @@ const Review = () => {
                                     </div>
                                     <div style={{ width: '70%' }}>
                                         <p>{slide.text}</p>
-                                        <p>{slide.rating}</p>
-                                        <h5 className='reviewer-name'>{slide.name}</h5>
+                                        <Rating
+                                            initialRating={slide.rating}
+                                            emptySymbol={<FontAwesomeIcon icon={faStar} />}
+                                            fullSymbol={<FontAwesomeIcon style={{ color: 'goldenrod', marginTop: '5px' }} icon={faStar} />}
+                                            readonly>
+                                        </Rating>
+                                        <h5 style={{ marginTop: '10px' }} className='reviewer-name'>{slide.name}</h5>
                                     </div>
                                 </div>
                             )}

@@ -50,6 +50,10 @@
     align-items: center;
 }
 
+.review-content-wrapper .slider-wrapper .slider-content p {
+    line-height: 1.5;
+}
+
 .review-content-wrapper .slider-wrapper .slider-content img {
     width: 100px;
     height: 100px;
