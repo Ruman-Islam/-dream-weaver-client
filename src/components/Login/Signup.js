@@ -6,7 +6,7 @@ import SocialLogin from './SocialLogin';
 import Menubar from '../Shared/Menubar/Menubar';
 
 const Signup = () => {
-    const {
+    const { // Create user id with email and password function from useFirebase hook // 
         handleCreateAccountWithEmailAndPassword,
         emailLoading,
         error
@@ -17,6 +17,7 @@ const Signup = () => {
     const [password, setPassword] = useState({ value: '', error: '' });
     const [confirmPassword, setConfirmPassword] = useState({ value: '', error: '' });
 
+    // Validations //
     const handleDisplayName = e => {
         const displayNameInput = e.target.value;
         if (displayNameInput) {
@@ -48,6 +49,7 @@ const Signup = () => {
         }
     }
 
+    // Register function //
     const handleRegister = (e) => {
         e.preventDefault();
         if (userName.value === "") {

@@ -47,10 +47,14 @@
     font-size: 18px;
 }
 
-
+/* ............ Mobile device.................... */
+/* ................................................ */
 @media only screen and (max-width: 576px)  {
     .banner-container {
         height: 75vh;
+    }
+    .banner-container::after {
+        height: 75%;
     }
     .banner-title {
         font-size: 20px;
@@ -59,3 +63,5 @@
         font-size: 15px;
     }
 }
+/* ............ Mobile device.................... */
+/* ................................................ */

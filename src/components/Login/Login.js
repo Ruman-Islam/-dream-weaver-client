@@ -16,7 +16,7 @@ const Login = () => {
     }
 
     const navigate = useNavigate();
-    const {
+    const {  // Receiving sign in function from useFirebase hook //
         handleSignWithInEmailAndPassword,
         handlePasswordReset,
         emailLoading,
@@ -33,8 +33,8 @@ const Login = () => {
     const [email, setEmail] = useState({ value: '', error: '' });
     const [password, setPassword] = useState({ value: '', error: '' });
 
-    const handleEmail = event => {
-        const emailInput = event.target.value;
+    const handleEmail = e => {
+        const emailInput = e.target.value;
         if ((emailInput === "")) {
             setEmail({ value: '', error: 'Email Required' })
         } else {
@@ -42,8 +42,9 @@ const Login = () => {
         }
     }
 
-    const handlePassword = event => {
-        const passwordInput = event.target.value;
+    // Validation //
+    const handlePassword = e => {
+        const passwordInput = e.target.value;
         if (passwordInput === '') {
             setPassword({ value: '', error: 'Password Required' })
         } else {
@@ -65,7 +66,7 @@ const Login = () => {
         }
     }
 
-    return (
+    return (  // Sign in with email and password form //
         <div>
             <div className='blog-banner-wrapper'>
                 <Menubar />

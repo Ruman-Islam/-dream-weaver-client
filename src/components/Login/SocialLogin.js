@@ -5,7 +5,7 @@ import facebookLogo from '../../assets/images/facebook-logo.png';
 import './SocialLogin.css';
 
 const SocialLogin = () => {
-    const {
+    const { // Social login functions //
         googleSignIn,
         facebookSignIn,
         googleLoading,

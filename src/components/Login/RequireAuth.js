@@ -7,7 +7,7 @@ const RequireAuth = ({ children }) => {
     const location = useLocation();
     const [user, loading,] = useAuthState(auth);
 
-    if (loading) {
+    if (loading) { // Preventing redirecting to login page //
         return (
             <div style={{
                 width: '100%',

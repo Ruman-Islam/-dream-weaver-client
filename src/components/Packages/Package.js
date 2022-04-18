@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Package.css';
 
-const Package = ({ checkoutPage, package: { id, name, price, features, imageURL } }) => {
+const Package = ({ checkoutPage, package: { id, name, price, features, imageURL } }) => {  // package //
     const navigate = useNavigate();
     return (
         <div className='pricing-box'>

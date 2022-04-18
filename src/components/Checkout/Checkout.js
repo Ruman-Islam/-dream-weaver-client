@@ -6,9 +6,10 @@ import Package from '../Packages/Package';
 import './Checkout.css';
 
 const Checkout = () => {
+    // getting package id for dynamic route //
     const { packageId } = useParams();
+    // get matching selected package from packages.js //
     const selectedPackage = getPackage(packageId);
-
 
     return (
         <div>

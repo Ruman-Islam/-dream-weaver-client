@@ -73,7 +73,8 @@ nav .user-profile-photo img {
 }
 
 
-
+/* .............Mobile & Tablet device responsive.............. */
+/* ............................................................. */
 @media only screen and (max-width: 820px) {
     nav h1, .username {
         display: none;
@@ -95,3 +96,6 @@ nav .user-profile-photo img {
         font-size: .8rem;
     }
 }
+
+/* .............Mobile & Tablet device responsive.............. */
+/* ............................................................. */

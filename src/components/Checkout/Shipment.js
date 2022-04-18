@@ -4,11 +4,13 @@ import useFirebase from '../../Firebase/useFirebase.js';
 import './Shipment.css';
 
 const Shipment = () => {
+    // logged in user info //
     const { user } = useFirebase();
     const [userName, setUserName] = useState({ value: "", error: "" });
     const [address, setAddress] = useState({ value: "", error: "" });
     const [phone, setPhone] = useState({ value: "", error: "" });
 
+    // getting email & password & validation from input //
     const handleUserName = e => {
         const userNameInput = e.target.value;
         if (userNameInput) {
@@ -36,6 +38,7 @@ const Shipment = () => {
             setPhone({ value: "", error: "Phone is required" })
         }
     }
+    //......................................... //
 
     return (
         <div className='form-container'>

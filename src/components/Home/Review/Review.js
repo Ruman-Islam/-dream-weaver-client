@@ -7,7 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Review.css';
 
 const Review = () => {
+    //  Retrieving review data //
     const [reviews, setReviews] = useState([]);
+    // Default state value of slide review //
     const [current, setCurrent] = useState(0);
     const length = reviews.length;
 
@@ -38,6 +40,7 @@ const Review = () => {
             </button>
             <div
                 className='slider-wrapper'>
+                {/* ...............Review slider................ */}
                 {reviews.map((slide, index) => {
                     return (
                         <div className={index === current ? 'slide active' : 'slide'} key={index}>
@@ -61,6 +64,7 @@ const Review = () => {
                         </div>
                     )
                 })}
+                {/* ...............Review slider................ */}
             </div>
             <button className='slide-right' onClick={nextSlide}>
                 <AiOutlineDoubleRight className='arrow' />

@@ -15,7 +15,7 @@ const Packages = ({ isHome }) => {
         <div className='packages-container'>
             <h1 className='packages-title'>Packages</h1>
             <div className='packages-wrapper container'>
-                {
+                {  // Conditioning where to show packages //
                     isHome ?
                         packages.slice(0, 4).map(pg => <Package key={pg.id} package={pg} />)
                         :

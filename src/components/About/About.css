@@ -52,6 +52,9 @@
 }
 
 
+/* ..............Mobile Device responsive...............
+........................................................ */
+
 @media only screen and (max-width: 576px) {
     .about-container {
         height: 100%;
@@ -78,3 +81,6 @@
         text-align: center;
     }
 }
+
+/* ..............Mobile Device responsive...............
+........................................................ */

@@ -107,13 +107,20 @@
 }
 
 
-
+/* ................Tablet device ....................... */
+/* .............................. ....................... */
 @media only screen and (max-width: 1280px) {
     .review-content-wrapper {
         padding: 0;
     }
 }
+/* ................Tablet device ....................... */
+/* ..................................................... */
 
+
+
+/* ................Mobile device ....................... */
+/* .............................. ....................... */
 @media only screen and (max-width: 576px) {
     .review-content-wrapper .slider-wrapper .slider-content {
         flex-direction: column;
@@ -131,3 +138,5 @@
         text-align: justify;
     }
 }
+/* ................Mobile device ....................... */
+/* .............................. ....................... */

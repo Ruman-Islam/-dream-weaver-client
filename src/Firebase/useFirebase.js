@@ -23,6 +23,7 @@ const useFirebase = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
+    // Dynamically set loading , user, error //
     const [user, setUser] = useState(null);
     const [googleLoading, setGoogleLoading] = useState(false);
     const [fbLoading, setFbLoading] = useState(false);
@@ -30,6 +31,8 @@ const useFirebase = () => {
     const [error, setError] = useState(undefined);
     const [resetEmail, setResetEmail] = useState(false);
 
+
+    // sign in with google hook //
     const googleSignIn = e => {
         setGoogleLoading(true);
         e.preventDefault();
@@ -44,6 +47,7 @@ const useFirebase = () => {
             });
     }
 
+    // sign in with facebook hook //
     const facebookSignIn = e => {
         setFbLoading(true);
         e.preventDefault();
@@ -58,6 +62,7 @@ const useFirebase = () => {
             });
     }
 
+    // Sign in with email and password hook //
     const handleSignWithInEmailAndPassword = (email, password) => {
         setEmailLoading(true);
         signInWithEmailAndPassword(auth, email, password)
@@ -72,6 +77,7 @@ const useFirebase = () => {
             });
     }
 
+    // Create user hook //
     const handleCreateAccountWithEmailAndPassword = (name, email, password) => {
         setEmailLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
@@ -98,6 +104,7 @@ const useFirebase = () => {
             });
     }
 
+    // Monitoring user logged in //
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -109,6 +116,7 @@ const useFirebase = () => {
         });
     }, [])
 
+    // sign out hook //
     const handleSignOut = () => {
         signOut(auth).then(() => {
             setUser(null);
@@ -118,10 +126,11 @@ const useFirebase = () => {
         });
     }
 
+    // Reset password hook //
     const handlePasswordReset = email => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
-                // Password reset email sent!
+                // setting true for showing toast //
                 setResetEmail(true);
             })
             .catch((error) => {
