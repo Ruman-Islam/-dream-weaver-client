@@ -19,7 +19,7 @@ const DeleteProduct = () => {
                     packages?.map(pg =>
                         <Package key={pg._id}
                             deletePackage
-                            packageId={pg._id}
+                            pg={pg}
                             packages={packages}
                             setPackages={setPackages} />)
                 }
