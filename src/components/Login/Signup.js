@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import useFirebase from '../../Firebase/useFirebase';
 import { AiOutlineExclamationCircle } from "react-icons/ai";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
+import PageTitle from '../PageTitle/PageTitle';
 import Menubar from '../Shared/Menubar/Menubar';
 
 const Signup = () => {
+    const navigate = useNavigate();
     const { // Create user id with email and password function from useFirebase hook // 
         handleCreateAccountWithEmailAndPassword,
         emailLoading,
@@ -74,6 +76,7 @@ const Signup = () => {
     return (
         <div>
             <div className='blog-banner-wrapper'>
+                <PageTitle title="Sign up" />
                 <Menubar />
             </div>
             <div className='form-container'>
@@ -122,11 +125,11 @@ const Signup = () => {
                             {error}
                         </small>
                     }
-                    <small>
-                        <Link to='/login'>
-                            Already have an account?
-                        </Link>
-                    </small>
+                    <label
+                        style={{ textDecoration: 'underline', color: '#1C1C1C', cursor: 'pointer', textAlign: 'center' }}
+                        onClick={() => navigate('/login')}>
+                        Already have an account?
+                    </label>
                     <SocialLogin />
                 </form>
             </div>

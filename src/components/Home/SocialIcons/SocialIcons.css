@@ -1,0 +1,76 @@
+.social-icons-wrapper {
+    background: url('//i0.wp.com/dreamweaver.com.bd/wp-content/themes/dreamweaver/images/abstract-geometric-pattern-background_1319-242.jpg');
+    padding: 50px 0;
+}
+
+.social-icons-wrapper .social-icons-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.social-icons-wrapper {
+    display: flex;
+}
+
+.social-icons-wrapper .icons-container ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 10px;
+}
+
+.social-icons-wrapper .icons-container ul li {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    color: black;
+}
+
+.social-icons-wrapper .icons-container ul .facebook-icon::before,
+ .instagram-icon::before,
+  .google-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: scale(0.1);
+    opacity: 0;
+}
+
+.social-icons-wrapper .icons-container ul .facebook-icon:hover::before,
+.instagram-icon:hover::before,
+.google-icon:hover::before {
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    opacity: 1;
+    transition: .3s all;
+} 
+
+.social-icons-wrapper .icons-container ul .facebook-icon:hover::before {
+    background: #3B5998;
+}
+
+.social-icons-wrapper .icons-container ul .instagram-icon:hover::before {
+    background: #EA4C89;
+}
+
+.social-icons-wrapper .icons-container ul .google-icon:hover::before {
+    background: #DC4A38;
+}
+
+.social-icons-wrapper .icons-container ul li:hover{
+    color: white;
+    transition: 1s all;
+}

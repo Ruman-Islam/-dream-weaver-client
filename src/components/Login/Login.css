@@ -1,8 +1,9 @@
 .form-container {
-    height: 60vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .form-container form{
     width: 300px;
@@ -16,14 +17,14 @@
 
 .form-container form h5 {
     text-align: center;
-    color: var(--primary-color);
+    color: var(--form-color);
     font-weight: 700;
     font-size: 25px;
 }
 
 .form-container input {
     border: 0;
-    outline: 1px solid var(--primary-color);
+    outline: 1px solid var(--form-color);
     padding: 5px 10px;
     border-radius: 3px;
     font-size: 12px;
@@ -37,8 +38,8 @@
 
 .form-container form .login-btn {
     border: 0;
-    outline: 1px solid var(--primary-color);
-    background-color: var(--primary-color);
+    outline: 1px solid var(--form-color);
+    background-color: var(--form-color);
     color: white;
     font-weight: 500;
     padding: 4px;
@@ -89,6 +90,32 @@
     font-size: 16px;
 }
 
+.verify-btn-container {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.verify-btn-container .verify-btn {
+    margin-top: 20px;
+    display: block;
+    background: #232323;
+    border: 0;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 24px;
+    cursor: pointer;
+    width: 200px;
+}
+.verify-btn-container .verify-btn:hover {
+    background: white;
+    color: #232323;
+    transition: all .5s;
+    border: 1px solid #232323;
+}
 
 /* .............Mobile & Tablet device responsive........................ */
 /* ....................................................................... */

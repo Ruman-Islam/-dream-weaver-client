@@ -5,6 +5,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import './Review.css';
+import axios from 'axios';
 
 const Review = () => {
     //  Retrieving review data //
@@ -14,9 +15,11 @@ const Review = () => {
     const length = reviews.length;
 
     useEffect(() => {
-        fetch('reviews.json')
-            .then(res => res.json())
-            .then(data => setReviews(data))
+        const loadReviews = async () => {
+            const { data } = await axios.get('http://localhost:5000/reviews');
+            setReviews(data);
+        }
+        loadReviews();
     }, [])
 
     const nextSlide = () => {
@@ -47,17 +50,17 @@ const Review = () => {
                             {index === current && (
                                 <div className='slider-content'>
                                     <div className='slider-image-wrapper'>
-                                        <img src={slide.img} alt="" />
+                                        <img src={slide?.img} alt="" />
                                     </div>
                                     <div className='slider-text-wrapper'>
-                                        <p>{slide.text}</p>
+                                        <p>{slide?.text}</p>
                                         <Rating
-                                            initialRating={slide.rating}
+                                            initialRating={slide?.rating}
                                             emptySymbol={<FontAwesomeIcon icon={faStar} />}
                                             fullSymbol={<FontAwesomeIcon style={{ color: 'goldenrod', marginTop: '5px' }} icon={faStar} />}
                                             readonly>
                                         </Rating>
-                                        <h5 style={{ marginTop: '10px' }} className='reviewer-name'>{slide.name}</h5>
+                                        <h5 style={{ marginTop: '10px' }} className='reviewer-name'>{slide?.name.toUpperCase()}</h5>
                                     </div>
                                 </div>
                             )}

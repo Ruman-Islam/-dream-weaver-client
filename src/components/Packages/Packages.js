@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import usePackages from '../../Hooks/usePackages';
 import Package from './Package';
 import './Packages.css';
 
 const Packages = ({ isHome }) => {
-    const [packages, setPackages] = useState([]);
-
-    useEffect(() => {
-        fetch('photographyPackages.json')
-            .then(res => res.json())
-            .then(data => setPackages(data))
-    }, [])
+    const { packages } = usePackages();
 
     return (
         <div className='packages-container'>
@@ -17,9 +11,9 @@ const Packages = ({ isHome }) => {
             <div className='packages-wrapper container'>
                 {  // Conditioning where to show packages //
                     isHome ?
-                        packages.slice(0, 4).map(pg => <Package key={pg.id} package={pg} />)
+                        packages.slice(0, 4).map(pg => <Package key={pg._id} pg={pg} />)
                         :
-                        packages.map(pg => <Package key={pg.id} package={pg} />)
+                        packages.map(pg => <Package key={pg._id} pg={pg} />)
                 }
             </div>
         </div>

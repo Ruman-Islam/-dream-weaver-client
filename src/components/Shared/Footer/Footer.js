@@ -13,11 +13,11 @@ const Footer = () => {
                 <div className='address-content'>
                     <h3>Dhaka Office</h3>
                     <small> <AiFillEnvironment /> House#23,Road#1,Sector#9,Uttara. Dhaka, Bangladesh 1230</small>
-                    <small> <AiFillMail /> dreamweaverphotography.bd@gmail.com</small>
+                    <small> <AiFillMail /> rumanislam48@gmail.com</small>
                     <small> <AiFillPhone /> +88 01670 078953</small>
                 </div>
             </div>
-            <small>Copyright © {year}. All right reserved dreamweaver.com.bd</small>
+            <small>Copyright © {year}. All right reserved Ruman Islam</small>
         </footer>
     );
 };

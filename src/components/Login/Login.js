@@ -4,7 +4,8 @@ import useFirebase from '../../Firebase/useFirebase';
 import Menubar from '../Shared/Menubar/Menubar';
 import { useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
-import { ToastContainer, toast } from 'react-toastify';
+import PageTitle from '../PageTitle/PageTitle';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 
@@ -13,6 +14,7 @@ const Login = () => {
         toast.success("Password reset email sent!", {
             position: toast.POSITION.TOP_CENTER
         });
+        setResetEmail(false);
     }
 
     const navigate = useNavigate();
@@ -21,7 +23,8 @@ const Login = () => {
         handlePasswordReset,
         emailLoading,
         error,
-        resetEmail
+        resetEmail,
+        setResetEmail
     } = useFirebase();
 
     useEffect(() => {
@@ -69,6 +72,7 @@ const Login = () => {
     return (  // Sign in with email and password form //
         <div>
             <div className='blog-banner-wrapper'>
+                <PageTitle title="Login" />
                 <Menubar />
             </div>
             <div className='form-container'>
@@ -101,16 +105,15 @@ const Login = () => {
                             {error}
                         </small>}
                     <label
-                        style={{ textDecoration: 'underline', color: 'blue', cursor: 'pointer' }}
+                        style={{ textDecoration: 'underline', color: '#1C1C1C', cursor: 'pointer', textAlign: 'center' }}
                         onClick={() => navigate('/signup')}>
                         New to Dream Weaver?
                     </label>
                     <label
-                        style={{ textDecoration: 'underline', color: 'blue', cursor: 'pointer' }}
+                        style={{ textDecoration: 'underline', color: '#1C1C1C', cursor: 'pointer', textAlign: 'center' }}
                         onClick={() => handlePasswordReset(email.value)}>
                         Reset password
                     </label>
-                    <ToastContainer />
                     <SocialLogin />
                 </form>
             </div>

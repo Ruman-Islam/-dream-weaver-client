@@ -2,10 +2,12 @@ import React from 'react';
 import Menubar from '../Shared/Menubar/Menubar';
 import profileImage from '../../assets/images/Ruman.jpg';
 import './About.css';
+import PageTitle from '../PageTitle/PageTitle';
 
 const About = () => {
     return (
         <div className='about-container'>
+            <PageTitle title="About" />
             <div className='blog-banner-wrapper'>
                 <Menubar />
             </div>

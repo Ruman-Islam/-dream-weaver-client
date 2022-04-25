@@ -1,14 +1,16 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import useFirebase from '../../Firebase/useFirebase.js';
 import './Booking.css';
 
-const Shipment = ({ setBooked }) => {
+const Booking = ({ setBooked, booked, pg }) => {
     // logged in user info //
     const { user } = useFirebase();
     const [userName, setUserName] = useState({ value: "", error: "" });
     const [address, setAddress] = useState({ value: "", error: "" });
     const [phone, setPhone] = useState({ value: "", error: "" });
+    const [eventDate, setEventDate] = useState({ value: "", error: "" });
     const [isAgree, setIsAgree] = useState(false);
 
     // getting email & password & validation from input //
@@ -26,10 +28,25 @@ const Shipment = ({ setBooked }) => {
 
     const handlePhone = e => {
         const phoneInput = e.target.value;
-        setPhone({ value: phoneInput, error: "" })
+        setPhone({ value: phoneInput, error: "" });
+    }
+
+    const handleEventDate = e => {
+        const eventDateInput = e.target.value;
+        setEventDate({ value: eventDateInput, error: "" });
+    }
+
+    const handleResetInput = e => {
+        e.target.username.value = '';
+        e.target.address.value = '';
+        e.target.phone.value = '';
+        e.target.eventDate.value = '';
     }
 
     const handleSubmit = e => {
+        const date = new Date().getDate();
+        const month = new Date().getMonth();
+        const year = new Date().getFullYear();
         e.preventDefault();
         if (userName.value === "") {
             setUserName({ value: "", error: "Username is required" })
@@ -37,14 +54,32 @@ const Shipment = ({ setBooked }) => {
             setAddress({ value: "", error: "Address is required" })
         } else if (phone.value === "") {
             setPhone({ value: "", error: "Phone is required" })
+        } else if (eventDate.value === "") {
+            setEventDate({ value: "", error: "Date is required" })
         } else {
-            setBooked(true);
+            const order = {
+                userName: userName.value,
+                email: user?.email,
+                address: address.value,
+                phone: phone.value,
+                eventDate: eventDate.value,
+                packageName: pg.name,
+                orderDate: `${date}/${month}/${year}`
+            }
+            if (!booked) {
+                axios.post("http://localhost:5000/addorder", order)
+                    .then(res => {
+                        setBooked(true);
+                        handleResetInput(e);
+                        console.log(res);
+                    })
+            }
         }
     }
     //......................................... //
 
     return (
-        <div className='form-container shipment'>
+        <div className='form-container booking-form'>
             <form onSubmit={handleSubmit}>
                 <h5>Contact Information</h5>
                 <label htmlFor="username">You name</label>
@@ -56,7 +91,7 @@ const Shipment = ({ setBooked }) => {
                     </small>
                 )}
                 <label htmlFor="email">Email</label>
-                <input value={user?.email} readOnly type="email" name="email" id="email" />
+                <input value={user?.email} readOnly disabled type="email" name="email" id="email" />
                 <label htmlFor="address">Address</label>
                 <input onBlur={handleAddress} type="text" name="address" id="address" />
                 {address.error && (
@@ -74,17 +109,17 @@ const Shipment = ({ setBooked }) => {
                     </small>
                 )}
 
-                <label htmlFor="phone">Event Date</label>
-                <input onBlur={handlePhone} type="date" name="phone" id="phone" />
-                {phone.error && (
+                <label htmlFor="eventDate">Event Date</label>
+                <input onBlur={handleEventDate} type="date" name="eventDate" id="eventDate" />
+                {eventDate.error && (
                     <small className='error'>
                         <AiOutlineExclamationCircle className='warning-icon' />
-                        {phone.error}
+                        {eventDate.error}
                     </small>
                 )}
                 <br />
                 <input
-                    disabled={!isAgree}
+                    disabled={isAgree ? false : true}
                     className={isAgree ? 'book-btn-true' : 'book-btn-false'} type='submit' value="Book" />
                 <div className='check-container'>
                     <input onClick={() => setIsAgree(!isAgree)} type="checkbox" name="" id="check" />
@@ -95,4 +130,4 @@ const Shipment = ({ setBooked }) => {
     );
 };
 
-export default Shipment;
+export default Booking;

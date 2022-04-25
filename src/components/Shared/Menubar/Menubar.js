@@ -9,7 +9,9 @@ import './Menubar.css';
 const Menubar = () => {
     const { navbar } = useNav();
     const { user, handleSignOut } = useFirebase();
+    const photoURL = user?.photoURL;
     const navigate = useNavigate();
+
     return (
         <nav className={`${navbar && 'navbar-background'}`}>
             <div className='navbar-wrapper'>
@@ -19,27 +21,36 @@ const Menubar = () => {
                 <div className='navigation-items'>
                     <small className='username'>
                         <strong>
-                            {user?.displayName ? `Hi ${user?.displayName.split(' ')[0]},` : ''}
+                            {user?.emailVerified ? `Hi ${user?.displayName.split(' ')[0]},` : ''}
                         </strong>
                     </small>
                     <CustomLink className={navbar && 'nav-link'} to='/home'>Home</CustomLink>
                     <CustomLink className={navbar && 'nav-link'} to="/Packages">Packages</CustomLink>
-                    <CustomLink className={navbar && 'nav-link'} to="/about">About me</CustomLink>
-                    <CustomLink className={navbar && 'nav-link'} to="/blog">Blog</CustomLink>
-
-                    {user?.email ?
+                    {user?.email !== 'rumanislam0429@gmail.com' ?
+                        <CustomLink className={navbar && 'nav-link'} to="/orders">Order</CustomLink>
+                        :
+                        <CustomLink className={navbar && 'nav-link'} to="/about">About</CustomLink>
+                    }
+                    {user?.email === 'rumanislam0429@gmail.com' ?
+                        <CustomLink className={navbar && 'nav-link'} to="/dashboard">Admin</CustomLink>
+                        :
+                        <CustomLink className={navbar && 'nav-link'} to="/blog">Blog</CustomLink>
+                    }
+                    {user?.emailVerified ?
                         <div>
                             <button onClick={handleSignOut}>
-                                Log out
+                                Logout
                             </button>
                         </div>
                         :
                         <button onClick={() => navigate('/login')}>
-                            Log In
+                            Login
                         </button>}
-                    <div className='user-profile-photo'>
-                        <img src={user?.photoURL ? user?.photoURL : defaultImg} alt="" />
-                    </div>
+                    {photoURL &&
+                        <div className='user-profile-photo'>
+                            <img src={photoURL ? photoURL : defaultImg} alt="" />
+                        </div>
+                    }
                 </div>
             </div>
         </nav>

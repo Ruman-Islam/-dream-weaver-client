@@ -1,25 +1,33 @@
 import { useParams } from 'react-router-dom';
-import { getPackage } from '../../packages';
 import Menubar from '../Shared/Menubar/Menubar';
 import Booking from './Booking';
 import Package from '../Packages/Package';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Checkout.css';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
+import './Checkout.css';
 
 const Checkout = () => {
     const [booked, setBooked] = useState(false);
+    const [selectedPackage, setSelectedPackage] = useState({});
+
+    // getting package id for dynamic route //
+    const { packageId } = useParams();
+
+    useEffect(() => {
+        const loadPackage = async () => {
+            const { data } = await axios.get(`http://localhost:5000/package/${packageId}`)
+            setSelectedPackage(data)
+        }
+        loadPackage();
+    }, [packageId])
+
     const notify = () => {
         toast.success("Thank you for booking", {
             position: toast.POSITION.TOP_CENTER
         });
     }
-
-    // getting package id for dynamic route //
-    const { packageId } = useParams();
-    // get matching selected package from packages.js //
-    const selectedPackage = getPackage(packageId);
 
     useEffect(() => {
         if (booked) {
@@ -30,15 +38,16 @@ const Checkout = () => {
     return (
         <div>
             <div className='blog-banner-wrapper'>
+                {/* <PageTitle title="Checkout" /> */}
                 <Menubar />
             </div>
             <div className='checkout-container'>
-                <Package package={selectedPackage} checkoutPage />
-                <div className='shipment-container'>
-                    <Booking setBooked={setBooked} />
+                <Package pg={selectedPackage} checkoutPage />
+                <div className='booking-container'>
+                    <Booking setBooked={setBooked} booked={booked} pg={selectedPackage} />
                 </div>
             </div>
-            <ToastContainer />
+
         </div>
     );
 };

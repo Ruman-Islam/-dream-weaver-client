@@ -7,7 +7,6 @@ import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
     updateProfile,
-    sendEmailVerification,
     sendPasswordResetEmail
 } from "firebase/auth";
 import { useEffect, useState } from "react"
@@ -84,15 +83,11 @@ const useFirebase = () => {
             .then(async (result) => {
                 await updateProfile(auth.currentUser, {
                     displayName: name
-                }).then(async () => {
-                    await sendEmailVerification(auth.currentUser)
-                        .then(() => {
-                            // Email verification sent!
-                            // ...
-                            setUser(result.user);
-                            setEmailLoading(false);
-                            navigate((-3), from, { replace: true });
-                        });
+                }).then(() => {
+                    setUser(result.user);
+                    setEmailLoading(false);
+                    navigate('/home');
+
                 }).catch((error) => {
                     setError(error.message);
                     setEmailLoading(false);
@@ -106,9 +101,9 @@ const useFirebase = () => {
 
     // Monitoring user logged in //
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
             if (user) {
-                setUser(user);
+                await setUser(user);
             } else {
                 // User is signed out
                 // ...
@@ -117,8 +112,8 @@ const useFirebase = () => {
     }, [])
 
     // sign out hook //
-    const handleSignOut = () => {
-        signOut(auth).then(() => {
+    const handleSignOut = async () => {
+        await signOut(auth).then(() => {
             setUser(null);
             navigate('/')
         }).catch((error) => {
@@ -151,7 +146,8 @@ const useFirebase = () => {
         emailLoading,
         user,
         error,
-        resetEmail
+        resetEmail,
+        setResetEmail
     }
 }
 

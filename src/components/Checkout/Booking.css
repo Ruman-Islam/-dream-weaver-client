@@ -1,4 +1,4 @@
-.shipment form {
+.booking-form form {
     width: 400px !important;
 }
 
@@ -14,15 +14,11 @@
     margin-bottom: 5px !important;
 }
 
-.book-btn-true {
-    background-color: var(--primary-color);
-    margin-bottom: 10px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+.check-container input {
+    outline: 0 !important;
 }
 
-.book-btn-false {
+.book-btn-true {
     background-color: var(--form-color);
     margin-bottom: 10px;
     color: white;
@@ -30,3 +26,16 @@
     cursor: pointer;
 }
 
+.book-btn-false {
+    background-color: lightgray;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+@media only screen and (max-width: 576px) {
+    .booking-form form {
+        width: 300px !important;
+    }
+}

@@ -1,11 +1,13 @@
 import React from 'react';
 import Menubar from '../Shared/Menubar/Menubar';
+import PageTitle from '../PageTitle/PageTitle';
 import './Blog.css';
 
 const Blog = () => {
     return (
         <div className='blog-container'>
             <div className='blog-banner-wrapper'>
+                <PageTitle title="Blog" />
                 <Menubar />
             </div>
             <div className='container answer-container'>

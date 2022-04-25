@@ -1,12 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import backgroundImg from '../../assets/images/image-asset.jpeg';
+import PageTitle from '../PageTitle/PageTitle';
 import './NotFound.css';
 
 const NotFound = () => {
     const navigate = useNavigate();
     return (
         <div className='not-found-container'>
+            <PageTitle title="Error" />
             <div className='error-back-button'>
                 <button
                     onClick={() => navigate('/home')}
