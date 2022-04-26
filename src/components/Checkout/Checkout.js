@@ -17,7 +17,7 @@ const Checkout = () => {
 
     useEffect(() => {
         const loadPackage = async () => {
-            const { data } = await axios.get(`http://localhost:5000/package/${packageId}`)
+            const { data } = await axios.get(`https://secret-basin-49124.herokuapp.com/package/${packageId}`)
             setSelectedPackage(data)
         }
         loadPackage();

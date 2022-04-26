@@ -36,9 +36,12 @@ function App() {
                 <Orders />
               </RequireAuth>
             } />
-            <Route path='/dashboard' element={<Dashboard />}>
-              <Route path='add-product' element={<AddProduct />} />
-              <Route path='delete-product' element={<DeleteProduct />} />
+            <Route path='/dashboard' element={<RequireAuth>
+              <Dashboard>
+                <Route path='add-product' element={<AddProduct />} />
+                <Route path='delete-product' element={<DeleteProduct />} />
+              </Dashboard>
+            </RequireAuth>}>
             </Route>
             <Route path='/about' element={<About />} />
             <Route path='/blog' element={<Blog />} />

@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
     signInWithPopup,
     GoogleAuthProvider,
@@ -32,11 +33,13 @@ const useFirebase = () => {
 
 
     // sign in with google hook //
-    const googleSignIn = e => {
+    const googleSignIn = async e => {
         setGoogleLoading(true);
         e.preventDefault();
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
+        await signInWithPopup(auth, googleProvider)
+            .then(async (result) => {
+                const { data } = await axios.post('https://secret-basin-49124.herokuapp.com/login', { email: result.user.email })
+                localStorage.setItem('accessToken', data);
                 setUser(result.user);
                 navigate(from, { replace: true });
                 setGoogleLoading(false);
@@ -47,11 +50,13 @@ const useFirebase = () => {
     }
 
     // sign in with facebook hook //
-    const facebookSignIn = e => {
+    const facebookSignIn = async e => {
         setFbLoading(true);
         e.preventDefault();
-        signInWithPopup(auth, facebookProvider)
-            .then((result) => {
+        await signInWithPopup(auth, facebookProvider)
+            .then(async (result) => {
+                const { data } = await axios.post('https://secret-basin-49124.herokuapp.com/login', { email: result.user.email })
+                localStorage.setItem('accessToken', data);
                 setUser(result.user);
                 navigate(from, { replace: true });
                 setFbLoading(false);
@@ -62,11 +67,13 @@ const useFirebase = () => {
     }
 
     // Sign in with email and password hook //
-    const handleSignWithInEmailAndPassword = (email, password) => {
+    const handleSignWithInEmailAndPassword = async (email, password) => {
         setEmailLoading(true);
-        signInWithEmailAndPassword(auth, email, password)
-            .then((result) => {
+        await signInWithEmailAndPassword(auth, email, password)
+            .then(async (result) => {
                 setUser(result.user);
+                const { data } = await axios.post('https://secret-basin-49124.herokuapp.com/login', { email: result.user.email })
+                localStorage.setItem('accessToken', data);
                 navigate(from, { replace: true });
                 setEmailLoading(false);
             })
@@ -101,9 +108,9 @@ const useFirebase = () => {
 
     // Monitoring user logged in //
     useEffect(() => {
-        onAuthStateChanged(auth, async (user) => {
+        onAuthStateChanged(auth, (user) => {
             if (user) {
-                await setUser(user);
+                setUser(user);
             } else {
                 // User is signed out
                 // ...

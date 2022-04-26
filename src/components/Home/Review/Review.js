@@ -16,7 +16,7 @@ const Review = () => {
 
     useEffect(() => {
         const loadReviews = async () => {
-            const { data } = await axios.get('http://localhost:5000/reviews');
+            const { data } = await axios.get('https://secret-basin-49124.herokuapp.com/reviews');
             setReviews(data);
         }
         loadReviews();

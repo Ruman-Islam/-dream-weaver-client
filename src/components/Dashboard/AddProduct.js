@@ -30,10 +30,11 @@ const AddProduct = () => {
 
     const onSubmit = async (data, e) => {
         const packageInfo = data;
-        const features = data.features.split(', ');
-        packageInfo.features = features;
+        const features = data.features.split(',');
+        const newFeatures = features.map(ft => ft.trim());
+        packageInfo.features = newFeatures;
         if (packageInfo.name && packageInfo.price && packageInfo.imageURL && packageInfo.features) {
-            await axios.post("http://localhost:5000/addproduct", packageInfo)
+            await axios.post("https://secret-basin-49124.herokuapp.com/addpackage", packageInfo)
                 .then(res => {
                     notify("Package added successfully");
                     handleResetInput(e);
@@ -47,11 +48,11 @@ const AddProduct = () => {
         <div className='add-product-form'>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Name</label>
-                <input name="name" type="text" {...register("name")} />
+                <input name="name" autoComplete="off" type="text" {...register("name")} />
                 <label>Price</label>
-                <input name="price" type="number" {...register("price")} />
+                <input name="price" autoComplete="off" type="number" {...register("price")} />
                 <label>Thumbnail</label>
-                <input name="imageURL" type="text" {...register("imageURL")} />
+                <input name="imageURL" autoComplete="off" type="text" {...register("imageURL")} />
                 <label>Features</label>
                 <textarea name="features" rows="5" cols="50" {...register("features")} /> <br />
                 <button

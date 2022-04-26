@@ -6,7 +6,7 @@ const Package = ({ checkoutPage, deletePackage, pg, packages, setPackages }) => 
     const navigate = useNavigate();
 
     const handleDeletePackage = async id => {
-        const url = `http://localhost:5000/package/${id}`;
+        const url = `https://secret-basin-49124.herokuapp.com/package/${id}`;
         await axios.delete(url)
             .then(res => {
                 const remainingPackages = packages.filter(pg => pg._id !== id);
@@ -32,7 +32,7 @@ const Package = ({ checkoutPage, deletePackage, pg, packages, setPackages }) => 
                     :
                     deletePackage ?
                         <div className='pricing-action'>
-                            <button onClick={() => handleDeletePackage(pg.id)}>
+                            <button onClick={() => handleDeletePackage(pg._id)}>
                                 Delete
                             </button>
                         </div>

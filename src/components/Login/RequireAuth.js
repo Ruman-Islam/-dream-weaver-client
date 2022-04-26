@@ -7,13 +7,13 @@ import { sendEmailVerification } from 'firebase/auth';
 const RequireAuth = ({ children }) => {
     const location = useLocation();
     const [user, loading] = useAuthState(auth);
+    // console.log(user);
 
     const notify = () => {
-        toast.success("A email verification code is sent.", {
+        toast.success("A verification code has been sent.", {
             position: toast.POSITION.TOP_CENTER
         });
     }
-
 
     if (loading) { // Preventing redirecting to login page //
         return (
@@ -30,7 +30,7 @@ const RequireAuth = ({ children }) => {
     }
 
     if (!user) {
-        return <Navigate to='/login' state={{ from: location }} />
+        return <Navigate to='/login' state={{ from: location }} replace />
     }
 
     if (!user.emailVerified) {

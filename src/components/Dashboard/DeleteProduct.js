@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Package from '../Packages/Package';
 
@@ -5,11 +6,11 @@ const DeleteProduct = () => {
     const [packages, setPackages] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/packages')
-            .then(res => res.json())
-            .then(data => {
-                setPackages(data)
-            })
+        const getPackages = async () => {
+            await axios.get('https://secret-basin-49124.herokuapp.com/packages')
+                .then(res => setPackages(res.data))
+        }
+        getPackages();
     }, [])
     return (
         <div className='packages-container'>

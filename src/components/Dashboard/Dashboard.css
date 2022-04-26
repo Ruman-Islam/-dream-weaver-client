@@ -44,7 +44,6 @@
     outline: 1px solid var(--form-color);
     padding: 5px 10px;
     border-radius: 5px;
-    transition: .5s;
 }
 
 .dashboard h2 {
